@@ -1,0 +1,41 @@
+image: redhat/ubi8
+
+stages:
+  - test
+  - compile
+  - deploy_test
+  - verify_test
+  # - deploy-main
+  # - verify-mainnet
+
+test:
+  image: redhat/ubi8
+  stage: test
+  tags:
+    - docker
+  script:
+    - echo 'test'
+
+compile:
+  image: redhat/ubi8
+  stage: compile
+  tags:
+    - docker
+  script:
+    - echo 'compile'
+
+deploy:
+  image: redhat/ubi8
+  stage: deploy_test
+  tags:
+    - docker
+  script:
+    - echo 'deploy'
+
+verify:
+  image: redhat/ubi8
+  stage: verify_test
+  tags:
+    - docker
+  script:
+    - echo 'verify'
